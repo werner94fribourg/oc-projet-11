@@ -1,0 +1,79 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.gallery {
+  background-color: $gallery-bg;
+  padding: 5.6rem 5rem;
+  margin: 4.3rem 0;
+  border-radius: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 34rem);
+  gap: 5rem;
+  justify-content: space-between;
+  @include respond(tab-land) {
+    grid-template-columns: repeat(auto-fill, 18rem);
+    padding: 3.6rem 3rem;
+    column-gap: 2rem;
+  }
+  @include respond(tab-portrait) {
+    grid-template-columns: repeat(auto-fill, 19rem);
+  }
+  @include respond(mobile) {
+    grid-template-columns: repeat(auto-fill, 20rem);
+    margin: 2.75rem 0;
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+  @include respond(mobile) {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  &__item {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    @include cardMixin;
+    border-radius: 1rem;
+    position: relative;
+  }
+  &__link {
+    display: block;
+    position: absolute;
+    @include cardMixin;
+    &:visited,
+    &:link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  &__img {
+    height: 34rem;
+    @include respond(tab-land) {
+      height: 19rem;
+    }
+    @include respond(mobile) {
+      height: calc(100vw - 6.9rem);
+    }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    &-container {
+      @include cardMixin;
+      border-radius: 1rem;
+      overflow: hidden;
+      opacity: 0.57;
+      position: relative;
+    }
+  }
+  &__title {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    width: 62%;
+  }
+}

@@ -1,0 +1,32 @@
+@import './abstracts/mixins';
+
+* {
+  box-sizing: inherit;
+  &::after,
+  &::before {
+    box-sizing: inherit;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  font-size: 62.5%; // 1rem : 10px since 10px/16px = 0.625
+  @include respond(tab-portrait) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box; // set all base box-sizing to border-box unless we redefine it
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0 5rem;
+  @include respond(mobile) {
+    padding: 0 2.5rem;
+  }
+  @include respond(desktop) {
+    padding: 0 10rem;
+  }
+}

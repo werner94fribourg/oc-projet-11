@@ -1,0 +1,46 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+  @include respond(tab-land) {
+    padding: 2.5rem 0;
+  }
+  &__logo {
+    height: 69px;
+    @include respond(tab-portrait) {
+      height: 47px;
+    }
+  }
+  &__nav {
+    &-list {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-end;
+      list-style-type: none;
+      font-size: 2.4rem;
+      gap: 5.7rem;
+      color: $red;
+      text-align: right;
+      @include respond(tab-portrait) {
+        font-size: 1.5rem;
+        font-weight: 500;
+        gap: 1.25rem;
+      }
+      &-item {
+        &:visited,
+        &:link {
+          text-decoration: none;
+          color: inherit;
+        }
+        &--active {
+          text-decoration-line: underline !important;
+        }
+      }
+    }
+  }
+}
