@@ -1,0 +1,13 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.banner {
+  @include bannerMixin;
+  margin-top: 0.4rem;
+  background-image: linear-gradient(to right, $banner-bg, $banner-bg),
+    url('./about-banner.png');
+  background-blend-mode: darken;
+  @include respond(tab-portrait) {
+    height: 27.875rem;
+  }
+}

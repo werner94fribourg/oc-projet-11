@@ -1,0 +1,124 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.collapse {
+  width: 100%;
+  max-width: 102.3rem;
+  margin: 3.1rem auto;
+  @include respond(tab-portrait) {
+    margin: 2.5rem auto;
+  }
+  &__header {
+    background: $red;
+    position: relative;
+    color: #ffffff;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    @include respond(tab-portrait) {
+      border-radius: 0.625rem;
+      height: 3.75rem;
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color: inherit;
+    font-size: 2.4rem;
+    margin: 0;
+    width: 100%;
+    @include respond(tab-portrait) {
+      font-size: 1.625rem;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0 1.8rem;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100%;
+    text-align: left;
+    @include respond(tab-portrait) {
+      padding: 0 1.5rem;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+    right: 3.3rem;
+    @include respond(tab-portrait) {
+      right: 1.25rem;
+    }
+    &-enter {
+      transform: translateY(-50%) rotate(0);
+    }
+    &-enter-active {
+      transform: translateY(-50%) rotate(180deg);
+      transition: transform 300ms ease-in-out;
+    }
+    &-enter-done {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &-exit {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &-exit-active {
+      transform: translateY(-50%) rotate(0);
+      transition: transform 300ms ease-in-out;
+    }
+    &-exit-done {
+      transform: translateY(-50%) rotate(0);
+    }
+  }
+  &__content {
+    position: relative;
+    background-color: $collapse-content-bg;
+    padding: 1.8rem;
+    padding-top: calc(2.7rem + 4px);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: $red;
+    z-index: -1;
+    border-radius: 0 0 0.5rem 0.5rem;
+    @include respond(tab-portrait) {
+      padding: 1.5rem;
+      padding-top: calc(2.875rem + 4px);
+      font-size: 1.5rem;
+      border-radius: 0 0 0.625rem 0.625rem;
+    }
+    &-enter {
+      transform: translateY(-4px) scaleY(0);
+    }
+    &-enter-active {
+      transform: translateY(-4px) scaleY(1);
+      transform-origin: top left;
+      transition: transform 300ms ease-in-out;
+    }
+    &-enter-done {
+      transform: translateY(-4px) scaleY(1);
+      transform-origin: top left;
+    }
+    &-exit {
+      transform: translateY(-4px) scaleY(1);
+    }
+    &-exit-active {
+      transform: translateY(-4px) scaleY(0);
+      transform-origin: top left;
+      transition: transform 300ms ease-in-out;
+    }
+    &-exit-done {
+      transform: translateY(-4px) scaleY(0);
+      transform-origin: top left;
+    }
+  }
+  &__paragraph {
+    margin: 0;
+  }
+}

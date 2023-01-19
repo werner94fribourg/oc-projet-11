@@ -2,27 +2,17 @@
 @import '../../../scss/abstracts/mixins';
 
 .banner {
-  width: 100%;
-  height: 22.3rem;
-  border-radius: 2.5rem;
+  @include bannerMixin;
   margin-top: 2.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-  background-image: linear-gradient(to right, $homebanner-bg, $homebanner-bg),
+  background-image: linear-gradient(to right, $banner-bg, $banner-bg),
     url('./home-banner.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   background-blend-mode: darken;
-  @include respond(tab-land) {
-    margin-top: 2rem;
-  }
   @include respond(mobile) {
-    margin-top: 0;
     height: 13.875rem;
-    border-radius: 1.25rem;
   }
   @include respondMax(23.875) {
     justify-content: left;
