@@ -1,7 +1,9 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Description from '../components/Housing/Description/Description';
+import LoadingSpinner from '../components/Housing/Loading/Loading';
+import Slideshow from '../components/Housing/Slideshow/Slideshow';
 import { HousingsContext } from '../context/housings-context';
-import NotFound from './NotFound';
 
 const Housing = () => {
   const { id } = useParams();
@@ -12,17 +14,22 @@ const Housing = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!housing) navigate('not-found');
-    }, 70);
+    }, 2000);
     return () => {
       clearTimeout(timer);
     };
   }, [housing, navigate]);
 
   if (!housing) {
-    return <NotFound />;
+    return <LoadingSpinner />;
   }
 
-  return <p>Logement {id}</p>;
+  return (
+    <React.Fragment>
+      <Slideshow pictures={housing.pictures} />
+      <Description housing={housing} />
+    </React.Fragment>
+  );
 };
 
 export default Housing;

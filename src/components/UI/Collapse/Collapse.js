@@ -60,7 +60,9 @@ const Collapse = props => {
         unmountOnExit
       >
         <div ref={collapseRef} className={styles['collapse__content']}>
-          <p className={styles['collapse__paragraph']}>{props.content}</p>
+          <div className={styles['colladivse__paragraph']}>
+            {props.children}
+          </div>
         </div>
       </CSSTransition>
     </div>

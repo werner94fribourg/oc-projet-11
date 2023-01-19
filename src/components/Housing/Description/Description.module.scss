@@ -1,0 +1,102 @@
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/abstracts/variables';
+
+.description {
+  margin-top: 3rem;
+  position: relative;
+  @include respond(tab-portrait) {
+    margin-top: 1.875rem;
+  }
+  &__title {
+    font-size: 3.6rem;
+    font-weight: 500;
+    color: $red;
+    margin: 0;
+    @include respond(tab-portrait) {
+      margin-bottom: 0.625rem;
+    }
+  }
+  &__location {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $red;
+    margin: 0;
+  }
+  &__host-and-notation {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include respond(tab-land) {
+      position: relative;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      justify-content: space-between;
+    }
+  }
+  &__host {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: right;
+    &-title {
+      color: $red;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 0;
+      width: 9.3rem;
+      text-align: right;
+    }
+    &-picture {
+      width: 6.4rem;
+      border-radius: 50%;
+    }
+  }
+  &__notation {
+    margin-top: 2.4rem;
+    img {
+      height: 3rem;
+      @include respond(tab-portrait) {
+        height: 1.875rem;
+      }
+    }
+  }
+  &__tag-list {
+    all: unset;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    gap: 1rem;
+    &-item {
+      width: 11.5rem;
+      background-color: $red;
+      color: #ffffff;
+      text-align: center;
+      border-radius: 1rem;
+      padding: 0.3rem 0;
+    }
+  }
+  &__collapses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7.6rem;
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      margin-top: 1rem;
+    }
+    div {
+      @include respond(mobile) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__equipment-list {
+    all: unset;
+    list-style: none;
+  }
+}
