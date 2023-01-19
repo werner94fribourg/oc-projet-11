@@ -1,5 +1,7 @@
+import Content from '../components/NotFound/Content';
+
 const NotFound = () => {
-  return <p>Not Found</p>;
+  return <Content />;
 };
 
 export default NotFound;

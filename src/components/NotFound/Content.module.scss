@@ -1,0 +1,55 @@
+@import '../../scss/abstracts/variables';
+@import '../../scss/abstracts/mixins';
+
+.content {
+  color: $red;
+  text-align: center;
+  padding: 16.9rem 0;
+  @include respond(tab-land) {
+    padding: 12.9rem 0;
+  }
+  @include respond(tab-portrait) {
+    padding: 24.375rem 0;
+  }
+  &__title {
+    font-size: 28.8rem;
+    line-height: 24rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 6.6rem;
+    @include respond(tab-land) {
+      font-size: 18rem;
+      line-height: 15rem;
+      margin-bottom: 2.6rem;
+    }
+    @include respond(tab-portrait) {
+      font-size: 12rem;
+      line-height: 11rem;
+      margin-bottom: 1.375rem;
+    }
+  }
+  &__paragraph {
+    font-size: 3.6rem;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 18.2rem;
+    @include respond(tab-land) {
+      font-size: 2.6rem;
+      margin-bottom: 12rem;
+    }
+    @include respond(tab-portrait) {
+      font-size: 2.25rem;
+      margin-bottom: 16.625rem;
+    }
+  }
+  &__link {
+    font-size: 1.8rem;
+    @include respond(tab-portrait) {
+      font-size: 1.75rem;
+    }
+    &:visited,
+    &:link {
+      color: inherit;
+    }
+  }
+}
